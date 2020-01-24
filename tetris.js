@@ -129,7 +129,7 @@ function playerDrop() {
     if (collide(arena, player)) {
         player.pos.y--;
         spoj(arena, player);
-        playerReset();
+        reset();
         vycistitPlochu();
         updateScore();
     }
@@ -143,7 +143,7 @@ function pohybHrace(offset) {
     }
 }
 
-function Reset() {
+function reset() {
     const pieces = 'TJLOSZI';
     player.prostor = vytvorObjekt(pieces[pieces.length * Math.random() | 0]);
     player.pos.y = 0;
@@ -208,6 +208,6 @@ const player = {
     score: 0,
 };
 
-Reset();
+reset();
 updateScore();
 update();
